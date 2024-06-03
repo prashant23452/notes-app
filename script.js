@@ -51,3 +51,12 @@ function addNewNote(text = '') {
 
     document.body.appendChild(note)
 }
+function updateLS() {
+    const notesText = document.querySelectorAll('textarea')
+
+    const notes = []
+
+    notesText.forEach(note => notes.push(note.value))
+
+    localStorage.setItem('notes', JSON.stringify(notes))
+}
